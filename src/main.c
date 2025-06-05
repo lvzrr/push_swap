@@ -63,8 +63,9 @@ int	main(int argc, char **argv)
 		return (ft_free(&v.data), write(2, "Error\n", 6), 1);
 	ft_vec_rev(&v);
 	for (size_t i = 0; i < v.size; i++)
-		printf("%d\n", *((int *)ft_vec_get(&v, i)));
+		printf("%ld\n", *((ssize_t *)ft_vec_get(&v, i)));
 	// TODO 
+	printf("min: %ld\n",*(ssize_t *)get_min(&v));
 	ft_free(&v.data);
 	return (0);
 }
