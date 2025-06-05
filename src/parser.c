@@ -11,12 +11,26 @@
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
+
+t_u8	lookup(t_vec *v, ssize_t n)
+{
+	ssize_t	*vd;
+	size_t	i;
+
+	i = 0;
+	vd = (ssize_t *)v->data;
+	while (i < v->size)
+		if (vd[i++] == n)
+			return (1);
+	return (0);
+}
 
 t_u8	eat(char *s, t_vec *v)
 {
 	char	**split;
 	size_t	i;
-	int		x;
+	ssize_t	x;
 
 	split = ft_split(s, ' ');
 	if (!split)
@@ -24,7 +38,9 @@ t_u8	eat(char *s, t_vec *v)
 	i = 0;
 	while (split[i])
 	{
-		x = ft_atoi(split[i++]);
+		x = ft_atol(split[i++]);
+		if (x > INT_MAX || x < INT_MIN || lookup(v, x))
+			return (1);
 		ft_vec_push(v, &x, 1);
 		ft_free((void **)&split[i - 1]);
 	}

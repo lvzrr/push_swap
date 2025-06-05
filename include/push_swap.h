@@ -31,4 +31,5 @@ void	rrx(t_vec *a, t_u8 t);
 void	rrx_extern(t_vec *a, t_u8 t, t_u8 *buf);
 void	rrr(t_vec *a, t_vec *b);
 void	rrr_extern(t_vec *a, t_vec *b, t_u8 *buf);
+t_u8	lookup(t_vec *v, ssize_t n);
 #endif
