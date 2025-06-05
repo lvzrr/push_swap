@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rrr.c                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jaicastr <jaicastr@student.42madrid.com>   +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/06/01 00:14:12 by jaicastr          #+#    #+#             */
+/*   Updated: 2025/06/01 00:15:25 by jaicastr         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "push_swap.h"
+
+void	rrr(t_vec *a, t_vec *b)
+{
+	rrx(a, 0);
+	rrx(b, 0);
+	write(1, "rrr\n", 4);
+}
+
+void	rrr_extern(t_vec *a, t_vec *b, t_u8 *buffer)
+{
+	rrx_extern(a, 0, buffer);
+	rrx_extern(b, 0, buffer);
+	write(1, "rrr\n", 4);
+}
