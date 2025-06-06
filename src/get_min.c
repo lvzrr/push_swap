@@ -12,22 +12,13 @@
 
 #include "push_swap.h"
 
-static inline ssize_t	__min(ssize_t x, ssize_t y)
-{
-	if (x < y)
-		return (x);
-	return (y);
-}
-
-void	*get_min(t_vec *v)
+size_t	get_min(t_vec *v)
 {
 	ssize_t	curr_min;
 	size_t	min_index;
 	size_t	i;
 	ssize_t	value;
 
-	if (!v || v->size == 0)
-		return (NULL);
 	curr_min = *(ssize_t *)ft_vec_get(v, 0);
 	min_index = 0;
 	i = 1;
@@ -41,5 +32,5 @@ void	*get_min(t_vec *v)
 		}
 		i++;
 	}
-	return (ft_vec_get_mut(v, min_index));
+	return (min_index);
 }

@@ -20,13 +20,3 @@ void	rr(t_vec *a, t_vec *b)
 	r(b, 0);
 	write(1, "rr\n", 3);
 }
-
-void	rr_extern(t_vec *a, t_vec *b, t_u8 *buffer)
-{
-	if ((!a && !b) || (!a->size && !b->size)
-		|| !buffer)
-		return ;
-	r_extern(a, 0, buffer);
-	r_extern(b, 0, buffer);
-	write(1, "rr\n", 3);
-}

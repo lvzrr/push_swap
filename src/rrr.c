@@ -18,10 +18,3 @@ void	rrr(t_vec *a, t_vec *b)
 	rrx(b, 0);
 	write(1, "rrr\n", 4);
 }
-
-void	rrr_extern(t_vec *a, t_vec *b, t_u8 *buffer)
-{
-	rrx_extern(a, 0, buffer);
-	rrx_extern(b, 0, buffer);
-	write(1, "rrr\n", 4);
-}

@@ -50,22 +50,39 @@ static inline t_u8	load(t_vec *v, int argc, char **argv)
 	return (1);
 }
 
+void	dispatch(t_vec *a, t_vec *b)
+{
+	if (a->size == 2 && *(ssize_t *)ft_vec_get(a, 0)
+		> *(ssize_t *)ft_vec_get(a, 1))
+		s(a, 1);
+	else if (a->size == 3)
+		sort_three(a);
+	else if (a->size == 4)
+		sort_four(a, b);
+	else if (a->size == 5)
+		sort_five(a, b);
+	else
+		radix_sort(a, b);
+}
+
 int	main(int argc, char **argv)
 {
 	t_vec	v;
+	t_vec	w;
 
 	if (argc < 2 || !argv[1] || !argv[1][0])
 		return (1);
 	if (!check_args(argc, argv))
 		return (write(2, "Error\n", 6), 1);
 	v = ft_vec(500, sizeof(ssize_t));
+	w = ft_vec(500, sizeof(ssize_t));
 	if (!load(&v, argc, argv))
 		return (ft_free(&v.data), write(2, "Error\n", 6), 1);
 	ft_vec_rev(&v);
-	for (size_t i = 0; i < v.size; i++)
-		printf("%ld\n", *((ssize_t *)ft_vec_get(&v, i)));
-	// TODO 
-	printf("min: %ld\n",*(ssize_t *)get_min(&v));
+	dispatch(&v, &w);
+	// for (size_t i = 0; i < v.size; i++)
+	// 	printf("%ld\n", *(ssize_t *)ft_vec_get(&v, i));
 	ft_free(&v.data);
+	ft_free(&w.data);
 	return (0);
 }
