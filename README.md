@@ -1,3 +1,3 @@
 # PUSH SWAP
 
-wip
+Done, i think
