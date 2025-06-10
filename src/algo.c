@@ -73,7 +73,7 @@ void	normalize_indices(t_vec *v)
 
 	sorted = ft_vec(v->size, sizeof(ssize_t));
 	ft_vec_push(&sorted, v->data, v->size);
-	ft_vec_sort(&sorted);
+	_sort_vec(&sorted);
 	i = 0;
 	while (i < v->size)
 	{
@@ -90,36 +90,4 @@ void	normalize_indices(t_vec *v)
 		i++;
 	}
 	ft_free(&sorted.data);
-}
-
-void	radix_sort(t_vec *a, t_vec *b)
-{
-	size_t		i;
-	size_t		j;
-	ssize_t		num;
-	int			bits;
-	size_t		x;
-
-	bits = 0;
-	x = a->size;
-	normalize_indices(a);
-	while ((1 << bits) < (int)a->size)
-		bits++;
-	j = 0;
-	while (j < (size_t)bits)
-	{
-		i = 0;
-		while (i < x)
-		{
-			num = *(ssize_t *)ft_vec_peek_last(a);
-			if (!((num >> j) & 1))
-				p(b, a, 1);
-			else
-				r(a, 1);
-			i++;
-		}
-		while (b->size)
-			p(a, b, 2);
-		j++;
-	}
 }

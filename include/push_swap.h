@@ -34,4 +34,6 @@ void	sort_five(t_vec *a, t_vec *b);
 void	radix_sort(t_vec *a, t_vec *b);
 void	normalize_indices(t_vec *v);
 void	sort_four(t_vec *a, t_vec *b);
+void	_sort_vec(t_vec *v);
+t_u8	check_sorted(t_vec *v);
 #endif
