@@ -19,7 +19,7 @@ LIB			:=	libft/libft.a
 BUILDDIR	:= build
 OBJ			:= $(patsubst $(SRCDIR)/%.c, $(BUILDDIR)/%.o, $(SRC))
 CC			:= cc
-CFLAGS  	:= -Wall -Wextra -Werror $(INCLUDEF)
+CFLAGS  	:= -Wall -Wextra -Werror -O3 $(INCLUDEF)
 LDFLAGS		:= $(LIB)
 
 all: $(NAME)
