@@ -25,13 +25,13 @@ void	r(t_vec *v, t_u8 t)
 		return ;
 	}
 	ft_memtake(buffer, ft_vec_peek_last(v), v->sizeof_type);
-	i = v->size - 1;
+	i = v->size;
 	while (i > 0)
 	{
 		ft_memcpy(ft_vec_get_mut(v, i), ft_vec_get(v, i - 1), v->sizeof_type);
 		i--;
 	}
-	ft_memcpy(v->data, buffer, v->sizeof_type);
+	ft_memcpy(ft_vec_get_mut(v, 0), buffer, v->sizeof_type);
 	if (t == 1)
 		write(1, "ra\n", 3);
 	else if (t == 2)

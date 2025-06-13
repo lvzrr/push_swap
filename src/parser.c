@@ -17,13 +17,9 @@ t_u8	lookup(t_vec *v, ssize_t n)
 	size_t	i;
 
 	i = 0;
-	while (i != v->size / 2)
+	while (i != v->size)
 	{
-		if (i < v->size
-			&& *(ssize_t *)ft_vec_get(v, i++) == n)
-			return (1);
-		if (i < v->size
-			&& *(ssize_t *)ft_vec_get(v, v->size - i) == n)
+		if (*(ssize_t *)ft_vec_get(v, i++) == n)
 			return (1);
 	}
 	return (0);

@@ -15,27 +15,28 @@
 
 void	sort_three(t_vec *a)
 {
-	ssize_t		x;
-	ssize_t		y;
-	ssize_t		z;
+	ssize_t	x;
+	ssize_t	y;
+	ssize_t	z;
 
-	x = *(ssize_t *)ft_vec_get(a, a->size - 3);
-	y = *(ssize_t *)ft_vec_get(a, a->size - 2);
-	z = *(ssize_t *)ft_vec_get(a, a->size - 1);
-	if (x < y && y < z)
-		return ;
-	if (x < z && z < y)
-		s(a, 1);
-	else if (y < x && x < z)
-		s(a, 1);
-	else if (z < x && x < y)
-		rrx(a, 1);
-	else if (y < z && z < x)
+	x = *(ssize_t *)ft_vec_get(a, 0);
+	y = *(ssize_t *)ft_vec_get(a, 1);
+	z = *(ssize_t *)ft_vec_get(a, 2);
+	if (x > y && y < z && x < z)
 		r(a, 1);
-	else if (z < y && y < x)
+	else if (x < y && y < z)
 	{
+		r(a, 1);
 		s(a, 1);
+	}
+	else if (x > y && y < z && x > z)
+		s(a, 1);
+	else if (x < y && y > z && x < z)
 		rrx(a, 1);
+	else if (x < y && y > z && x > z)
+	{
+		rrx(a, 1);
+		s(a, 1);
 	}
 }
 

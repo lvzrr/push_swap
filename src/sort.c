@@ -48,7 +48,7 @@ t_u8	check_sorted(t_vec *v)
 	i = 1;
 	while (i < v->size)
 	{
-		if (data[i - 1] > data[i])
+		if (data[i - 1] < data[i])
 			return (0);
 		i++;
 	}

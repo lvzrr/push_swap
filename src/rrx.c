@@ -26,7 +26,7 @@ void	rrx(t_vec *v, t_u8 t)
 	ft_memtake(buffer, v->data, v->sizeof_type);
 	ft_memmove(v->data,
 		(t_u8 *)v->data + v->sizeof_type,
-		(v->size - 1) * v->sizeof_type);
+		(v->size) * v->sizeof_type);
 	ft_memcpy(ft_vec_peek_last(v), buffer, v->sizeof_type);
 	if (t == 1)
 		write(1, "rra\n", 4);

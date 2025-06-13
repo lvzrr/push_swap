@@ -34,3 +34,26 @@ size_t	get_min(t_vec *v)
 	}
 	return (min_index);
 }
+
+size_t	get_max(t_vec *v)
+{
+	ssize_t	curr_max;
+	size_t	max_index;
+	size_t	i;
+	ssize_t	value;
+
+	curr_max = *(ssize_t *)ft_vec_get(v, 0);
+	max_index = 0;
+	i = 1;
+	while (i < v->size)
+	{
+		value = *(ssize_t *)ft_vec_get(v, i);
+		if (value > curr_max)
+		{
+			curr_max = value;
+			max_index = i;
+		}
+		i++;
+	}
+	return (max_index);
+}

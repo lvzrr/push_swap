@@ -29,6 +29,7 @@ void	rrx(t_vec *a, t_u8 t);
 void	rrr(t_vec *a, t_vec *b);
 t_u8	lookup(t_vec *v, ssize_t n);
 size_t	get_min(t_vec *v);
+size_t	get_max(t_vec *v);
 void	sort_three(t_vec *a);
 void	sort_five(t_vec *a, t_vec *b);
 void	radix_sort(t_vec *a, t_vec *b);
