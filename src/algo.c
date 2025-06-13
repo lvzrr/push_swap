@@ -71,7 +71,7 @@ void	normalize_indices(t_vec *v)
 	size_t		i;
 	size_t		j;
 
-	sorted = ft_vec(v->size, sizeof(ssize_t));
+	sorted = ft_vec(500, sizeof(ssize_t));
 	ft_vec_push(&sorted, v->data, v->size);
 	_sort_vec(&sorted);
 	i = 0;
