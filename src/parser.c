@@ -39,9 +39,8 @@ t_u8	eat(char *s, t_vec *v)
 	{
 		x = ft_atol(split[i++]);
 		if (x > INT_MAX || x < INT_MIN || lookup(v, x))
-			return (1);
+			return (ft_free_array((void ***)&split), 1);
 		ft_vec_push(v, &x, 1);
-		ft_free((void **)&split[i - 1]);
 	}
 	return (ft_free_array((void ***)&split), 0);
 }

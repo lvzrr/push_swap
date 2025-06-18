@@ -77,10 +77,10 @@ int	main(int argc, char **argv)
 	v = ft_vec(500, sizeof(ssize_t));
 	w = ft_vec(500, sizeof(ssize_t));
 	if (!load(&v, argc, argv))
-		return (ft_free(&v.data), write(2, "Error\n", 6), 1);
+		return (ft_free(&v.data), ft_free(&w.data), write(2, "Error\n", 6), 1);
 	ft_vec_rev(&v);
 	if (check_sorted(&v))
-		return (0);
+		return (ft_free(&v.data), ft_free(&w.data), 0);
 	dispatch(&v, &w);
 	ft_free(&v.data);
 	ft_free(&w.data);
